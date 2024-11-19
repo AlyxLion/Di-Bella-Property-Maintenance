@@ -1,0 +1,91 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and overall page layout */
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    scroll-behavior: smooth; /* Optional: Smooth scrolling behavior */
+}
+
+/* Container for centering content */
+.container {
+    text-align: center;
+}
+
+/* Centered main round image */
+.center-image-container {
+    position: relative;
+    margin-top: 100px;
+    z-index: 1;
+}
+
+.main-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll animation effect for the main image */
+body.scrolled .main-image {
+    transform: translateY(-150px);
+}
+
+/* Round images for sections */
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.round-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+}
+
+.round-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Reveal images as they appear on scroll */
+body.scrolled .round-image {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section spacing */
+.round-image:nth-child(1) {
+    transition-delay: 0.2s;
+}
+.round-image:nth-child(2) {
+    transition-delay: 0.4s;
+}
+.round-image:nth-child(3) {
+    transition-delay: 0.6s;
+}
+.round-image:nth-child(4) {
+    transition-delay: 0.8s;
+}
+.round-image:nth-child(5) {
+    transition-delay: 1s;
+}
